@@ -18,10 +18,12 @@ app.use(cors({
   const pool = mariadb.createPool({
     host: '127.0.0.1',
     user: 'root',
-    password: '2540',
+    password: '1234',
     database: 'usersdb',
     connectionLimit: 5,
   });
+
+  //partee1 
 app.get("/", (req, res) => {
     res.send("<h1>a ver</h1>");
   });

@@ -1,29 +1,31 @@
-# Proyect-Final
-servidor.js tiene las rutas
-las rutas estan puestas en init.js y las que no estan ahi es porque estan siendo llamadas en su respectivo archivo JS,
 
-para el servidor, cors, jsonwebtoken, express
+# Proyecto Ecommerce / JAP
 
-puerto 3001 pqsi
+Este repositorio emplea backend por lo tanto github pages no funciona correctamente
+para visualizarlo y usar sus funcionalidades se debe usar un editor de codigo.
 
-en postman si se hace un post al localhost3001 con endpoint /register va a recibir username y password, se manejan 3 situaciones
-si ya existe.
-se registra.
-datos incompatible. (pide json y solo2)
+## Instalación 
 
-luego de eso en postman al hacer post pero con /login
-genera el token en caso de que sea igual que los datos ingresados en register
-se maneja:
-si son diferentes datos
-si es todo correcto (da el token)
-si esta malxd
+Para usar el proyecto con vscode.
 
-en login.js se esta haciendo un fetch a /login, y en register un fetch a /register
-la idea es "imitar" la funcionalidad de postman para que devuelva el token y lo almacene, asi
-interactuaria el servidor con el front, haciendo que para /cart o cart.html solo se ingrese
-si se tiene ese token.
+```
+git clone https://github.com/perazzajose/ecommerce-back.git
+```
 
-al registrarse y despues loguearse en html el token se guarda en localstorage
+```
+cd ecommerce-back
+```
+```
+npm install
+```
 
-el error en principio es "Error fetching navbar: TypeError: Failed to fetch" linea 16 de navbarjs, pero si se quitan los fetch de login y register funciona, intente
-metiendo async, await, borrandoloxd, nada funca, tambien intente borrar logout.js para que no me quite del indexhtml y tampoco es flipante
+
+
+## Configuración
+
+Asegúrate de tener una base de datos MariaDB en ejecución y actualiza las credenciales en el archivo servidor.js en la configuración del pool:
+```bash
+  node servidor.js
+```
+
+- La aplicación se ejecutará en http://localhost:3001 por defecto, a menos que se haya especificado otro puerto.
