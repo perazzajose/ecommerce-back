@@ -6,13 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const databaseKey = "userDatabase";
   const database = loadDatabase(databaseKey);
   const currentUser = localStorage.getItem("currentUser");
+
   const messageElement = document.getElementById("message");
+  console.log(database);
 
   if (currentUser) {
     window.location.href = "index.html";
   }
 
-  registerForm.addEventListener("submit", async (e) => {
+  registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
     messageElement.textContent = "";
     const username = document.getElementById("registerUsername").value;
@@ -24,30 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (password !== confirmPasswordInput) {
       messageElement.textContent = "Las contraseñas no coinciden.";
-      console.log("Las contraseñas no coinciden");
+      console.log("las contraseñas no coincidieron");
       return;
     } else if (existingUser) {
+      // Verificar si el usuario ya existe
       messageDiv.innerHTML = "El correo ya se encuentra registrado.";
       return;
     } else {
-      try {
-        const registerResponse = await fetch('http://localhost:3001/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ username, password })
-        });
-
-        if (registerResponse.ok) {
-          messageDiv.innerHTML = "Usuario registrado con éxito.";
-        } else {
-          messageDiv.innerHTML = "Error durante el registro.";
-        }
-      } catch (error) {
-        console.error('Error durante el registro:', error);
-        messageDiv.innerHTML = "Error durante el registro.";
-      }
+      // Crear nuevo usuario
+      const newUser = { username, email, password };
+      database.users.push(newUser);
+      saveDatabase(databaseKey, database);
+      messageDiv.innerHTML = "Usuario registrado con éxito.";
     }
   });
 });
