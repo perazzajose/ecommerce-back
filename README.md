@@ -43,7 +43,8 @@ En Visual Studio Code `git clone https://github.com/perazzajose/ecommerce-back.g
 ### Consideraciones
 
 - **Visualizar Front:** [Ecommerce_front](https://perazzajose.github.io/ecommerce-front/login.html)
-- **Datos del carrito:** El proyecto actualmente guarda los datos del carrito en un archivo JSON específico. 
+- **Datos del carrito:** El proyecto actualmente guarda los datos del carrito en un archivo JSON específico.
+- **Token y usuarios:** Me basé en la funcionalidad de Postman para enviar solicitudes /post desde el navegador. 
 
 
 
