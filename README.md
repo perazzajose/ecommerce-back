@@ -11,13 +11,10 @@ Para usar el proyecto con vscode.
 ```
 git clone https://github.com/perazzajose/ecommerce-back.git
 ```
-
-```
-cd ecommerce-back
-```
 ```
 npm install
 ```
+
 
 
 
@@ -27,5 +24,5 @@ Asegúrate de tener una base de datos MariaDB en ejecución y actualiza las cred
 ```bash
   node servidor.js
 ```
-
+- Este archivo "servidor.js" está dentro de la carpeta js.
 - La aplicación se ejecutará en http://localhost:3001 por defecto, a menos que se haya especificado otro puerto.
